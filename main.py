@@ -6,7 +6,7 @@ def count_batteries_by_health(present_capacities):
   failed_count=0
 
   #Rated capacity
-  rated_capacity=int(input())  #Ah
+  rated_capacity=120  #Ah
 
   for present_capacity in present_capacities:
     SoH = 100 * (present_capacity / rated_capacity)
