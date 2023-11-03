@@ -1,9 +1,29 @@
 
 def count_batteries_by_health(present_capacities):
+  #Initializing counts for each category of battery
+  healthy_count=0
+  exchange_count=0
+  failed_count=0
+
+  #Rated capacity
+  rated_capacity=int(input())  #Ah
+
+  for present_capacity in present_capacities:
+    SoH = 100 * (present_capacity / rated_capacity)
+
+    if SoH>80:
+      healthy_count+=1
+    elif 62<=SoH<=80:
+      exchange_count+=1
+    else:
+      failed_count+=1
+
+
+
   return {
-    "healthy": 0,
-    "exchange": 0,
-    "failed": 0
+    "healthy": healthy_count,
+    "exchange": exchange_count,
+    "failed": failed_count
   }
 
 
